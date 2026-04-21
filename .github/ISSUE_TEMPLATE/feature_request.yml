@@ -1,0 +1,91 @@
+name: Feature Request
+description: Propose a user-facing or internal feature with clear value and completion signals.
+title: "[Feature] "
+labels:
+  - "type:feature"
+  - "needs:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Keep this focused on the problem, the value, and the shape of the change. If the scope is still uncertain, open a spike first.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What is painful, missing, or newly valuable?
+      placeholder: Releasing content changes requires editing raw files by hand, which slows down routine updates.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: What should be true after this is shipped?
+      placeholder: A maintainer can publish content updates through a simple admin flow without touching code.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the shape of the solution, not every implementation detail.
+      placeholder: Add a lightweight admin page for content updates with validation and preview support.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Frontend
+        - Backend
+        - Infra
+        - Data
+        - Docs
+        - Tooling
+        - Cross-cutting
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency hint
+      description: Helps triage, but the Project priority is still the source of truth.
+      options:
+        - Needed in the next release or current push
+        - Important soon, but not next
+        - Valuable backlog item
+        - Nice to have
+    validations:
+      required: true
+  - type: textarea
+    id: users
+    attributes:
+      label: Who benefits and how
+      description: Internal team, end users, or both?
+      placeholder: Internal maintainers save time every week, and end users get faster turnaround on content fixes.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance signals
+      description: What would make this clearly done?
+      placeholder: The admin flow supports create and edit, validates input, and docs explain how to use it.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Supporting context
+      description: Links, screenshots, examples, or related issues.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched for an existing issue before filing this request.
+          required: true

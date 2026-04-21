@@ -1,0 +1,87 @@
+name: Spike or Research Task
+description: Time-boxed research used to remove uncertainty before committing to delivery work.
+title: "[Spike] "
+labels:
+  - "type:spike"
+  - "needs:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A spike should answer a question, not quietly become delivery work. Keep it time-boxed and explicit about the decision it needs to support.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: What do we need to find out?
+      placeholder: Can we support offline draft editing without introducing a custom sync service?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this spike exists now
+      description: What decision or delivery work is blocked by not knowing the answer?
+      placeholder: We cannot scope the editor roadmap until we understand whether local-first sync is practical here.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Frontend
+        - Backend
+        - Infra
+        - Data
+        - Docs
+        - Tooling
+        - Cross-cutting
+    validations:
+      required: true
+  - type: dropdown
+    id: timebox
+    attributes:
+      label: Suggested timebox
+      description: Keep the spike small enough to produce a decision, not a side project.
+      options:
+        - 2 hours
+        - Half day
+        - 1 day
+        - 2 days
+        - 3 days
+    validations:
+      required: true
+  - type: dropdown
+    id: deliverable
+    attributes:
+      label: Expected deliverable
+      options:
+        - Written recommendation
+        - Technical comparison
+        - Feasibility prototype
+        - Risk assessment
+    validations:
+      required: true
+  - type: textarea
+    id: exit
+    attributes:
+      label: Exit criteria
+      description: What answer, artifact, or decision ends the spike?
+      placeholder: A recommendation with tradeoffs, a go or no-go decision, and follow-up issues if more work is warranted.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context and references
+      description: Existing notes, links, constraints, or related issues.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I understand this spike should end with a decision or recommendation, not open-ended implementation.
+          required: true

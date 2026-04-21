@@ -1,0 +1,75 @@
+name: Task or Chore
+description: Capture maintenance, cleanup, upgrades, and operational work that still needs to be tracked.
+title: "[Chore] "
+labels:
+  - "type:chore"
+  - "needs:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this for cleanup, upgrades, refactors, operational work, and maintenance that is worth planning but is not a feature request or a bug.
+  - type: textarea
+    id: work
+    attributes:
+      label: Work to be done
+      description: What needs to change?
+      placeholder: Upgrade the API client library to the supported major version and update the affected endpoints.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this matters
+      description: What risk, drag, or follow-on benefit makes this worth doing?
+      placeholder: The current client is out of support and blocks other planned backend changes.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      options:
+        - Frontend
+        - Backend
+        - Infra
+        - Data
+        - Docs
+        - Tooling
+        - Cross-cutting
+    validations:
+      required: true
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency hint
+      options:
+        - Should land in the next release or current push
+        - Important this cycle
+        - Useful backlog maintenance
+        - Someday cleanup
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints or dependencies
+      description: Anything that could affect timing or scope?
+      placeholder: Needs to happen after the deployment window, and may require updating docs and scripts.
+    validations:
+      required: false
+  - type: textarea
+    id: done
+    attributes:
+      label: Done looks like
+      description: What result should exist when this is complete?
+      placeholder: Dependency is upgraded, affected code paths are updated, and smoke checks pass.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: This work is concrete enough to track as an issue instead of a note.
+          required: true

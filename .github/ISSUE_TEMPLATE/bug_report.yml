@@ -1,0 +1,96 @@
+name: Bug Report
+description: Report a bug with enough structure to triage it quickly and fix it cleanly.
+title: "[Bug] "
+labels:
+  - "type:bug"
+  - "needs:triage"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Capture the bug as concretely as you can. The goal is to make triage fast and keep the issue actionable.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Problem summary
+      description: What is broken, and what is the user-visible problem?
+      placeholder: Saving a draft returns success in the UI, but the draft is missing after refresh.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should have happened instead?
+      placeholder: The draft should remain visible after refresh and be available in the drafts list.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Use a short numbered list.
+      placeholder: |
+        1. Open the editor
+        2. Create a draft
+        3. Click Save
+        4. Refresh the page
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Primary area
+      description: Pick the main area this bug appears to belong to.
+      options:
+        - Frontend
+        - Backend
+        - Infra
+        - Data
+        - Docs
+        - Tooling
+        - Cross-cutting
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity suggestion
+      description: This is a triage hint, not the final label.
+      options:
+        - S1 - Work stops, release is blocked, or core behavior is broken
+        - S2 - Major defect with workaround or limited blast radius
+        - S3 - Minor defect, edge case, or cosmetic issue
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact
+      description: Who is affected, how often, and how bad is it?
+      placeholder: All users of the draft editor are affected whenever they save a new draft.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, logs, or screenshots
+      description: Paste logs, stack traces, or anything that helps narrow this down.
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: done
+    attributes:
+      label: Done looks like
+      description: How will we know this is actually fixed?
+      placeholder: Saving a draft persists it reliably, and a regression test covers the failure path.
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched for an existing issue before filing this one.
+          required: true
