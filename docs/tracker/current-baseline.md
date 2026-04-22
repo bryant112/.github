@@ -89,3 +89,4 @@ Canonical ecosystem-level analysis and operator guidance currently live in:
 
 - `https://github.com/BrynosRepo/.github/blob/main/docs/tracker/system-analysis-2026-04-21.md`
 - `https://github.com/BrynosRepo/.github/blob/main/docs/tracker/ai-operator-guide.md`
+- `https://github.com/BrynosRepo/.github/blob/main/docs/tracker/codex-throughput-guide.md`
