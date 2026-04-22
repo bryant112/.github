@@ -82,3 +82,10 @@ Remember:
 
 - during this rollout, `gh project copy` from the reference project produced the full field schema but the `bryant112` project description and readme still needed manual normalization afterward
 - during this rollout, `gh project unlink` behaved more reliably with `--repo REPO` than with `--repo OWNER/REPO` when `--owner` was already provided
+
+## Cross References
+
+Canonical ecosystem-level analysis and operator guidance currently live in:
+
+- `https://github.com/BrynosRepo/.github/blob/main/docs/tracker/system-analysis-2026-04-21.md`
+- `https://github.com/BrynosRepo/.github/blob/main/docs/tracker/ai-operator-guide.md`
