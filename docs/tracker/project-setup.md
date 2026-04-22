@@ -2,6 +2,11 @@
 
 This setup assumes GitHub Projects v2.
 
+For the full end-to-end rollout, command examples, and current operating notes, also read:
+
+- `docs/tracker/bootstrap-playbook.md`
+- `docs/tracker/current-baseline.md`
+
 If the repository belongs to an organization and GitHub Team is available, create an organization-level Project first. That is the cleanest default because it works for one repo now and scales to multiple repos later.
 
 ## Recommended Project
